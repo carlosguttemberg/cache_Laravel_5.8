@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
     protected $fillable = ['nome', 'preco'];
+
+    function categorias(){
+        return $this->belongsToMany("App\Categoria", "produto_categorias");
+    }
 }
